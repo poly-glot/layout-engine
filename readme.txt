@@ -41,10 +41,6 @@ Please consider downloading <a href="http://simpleux.co.uk/plugins/wordpress/lay
 
 You can ask your question on <a href="http://wordpress.org/support/plugin/layout-engine">wordpress support forum</a> or alternatively <a href="https://twitter.com/intent/tweet?text=type+your+question+here...&hashtags=layout_engine&via=simple_ux">tweet us</a>.
 
-= Where can I find documentation? =
-
-The documentation codex can be found at <a href="http://codex.buddypress.org/">http://codex.buddypress.org/</a>.
-
 = Where can I report a bug? =
 
 Report bugs and participate in development at <a href="https://github.com/simpleux/layout-engine">https://github.com/simpleux/layout-engine</a>.
