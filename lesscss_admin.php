@@ -280,7 +280,7 @@ class LE_LESSCSS_Admin
 			}	
 		}
 		
-		$options_saved = get_option('layout_manager_theme_options');
+		$options_saved = get_option('layout_manager_theme_options', array());
 		
 		$stylesheet_path = get_template_directory().DS.'style.less';
 		if(file_exists($stylesheet_path))

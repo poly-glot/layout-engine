@@ -4,8 +4,8 @@ Plugin Name: Layout Engine
 Plugin URI: http://simpleux.co.uk/plugins/wordpress/layout-engine
 Description: Provide drag & drop layout designer support, necessary tools and administration to give more control on dynamic sidebar creation, widget and layout management also empower lesscss features and theme options management.
 Author: Junaid Ahmed
-Version: 1.0.0.0
 Author URI: http://www.simpleux.co.uk
+Version: 1.0.0.0
 ***/
 
 if(!defined("DS"))
