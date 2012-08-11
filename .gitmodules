@@ -1,0 +1,3 @@
+[submodule "vendors/lesscss"]
+	path = vendors/lesscss
+	url = https://github.com/leafo/lessphp.git
