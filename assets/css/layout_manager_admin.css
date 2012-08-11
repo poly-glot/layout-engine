@@ -1,0 +1,527 @@
+
+/***
+* Template Hierarchy
+* http://codex.wordpress.org/Template_Hierarchy
+* http://thecodeplayer.com/walkthrough/css3-family-tree
+***/
+
+#template_hierarchy_tree ul {
+	padding-top: 20px; position: relative;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+#template_hierarchy_tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+#template_hierarchy_tree li::before, #template_hierarchy_tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid #ccc;
+	width: 50%; height: 20px;
+}
+#template_hierarchy_tree li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+#template_hierarchy_tree li:only-child::after, #template_hierarchy_tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+#template_hierarchy_tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+#template_hierarchy_tree li:first-child::before, #template_hierarchy_tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+#template_hierarchy_tree li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+#template_hierarchy_tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+#template_hierarchy_tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+
+#template_hierarchy_tree li a{
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #666;
+	font-family: arial, verdana, tahoma;
+	font-size: 11px;
+	display: inline-block;
+	
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+#template_hierarchy_tree li a:hover, #template_hierarchy_tree li a:hover+ul li a {
+	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+#template_hierarchy_tree li a:hover+ul li::after, 
+#template_hierarchy_tree li a:hover+ul li::before, 
+#template_hierarchy_tree li a:hover+ul::before, 
+#template_hierarchy_tree li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+
+.layout_engine_suboptions
+{
+	border-top:1px solid #CCCCCC;
+	width:100%;
+	overflow:auto;
+	clear:both;
+	zoom:1;
+}
+
+#template_hierarchy_list ul
+{
+	margin-left:15px;
+	padding-left:15px;
+}
+
+#template_hierarchy_list ul a
+{
+	text-decoration:none;
+	color:#666666;
+}
+
+#template_hierarchy_list ul a:hover
+{
+	color:#D54E21;
+}
+
+
+/***
+* Widget/Sidebar Form Options (IFrame)
+***/
+#wp_layout_manager_admin .widget-holder,
+#wp_layout_manager_admin .widgets-sortables
+{
+	border-width: 0 1px 1px;
+	border-style: none solid solid;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+#wp_layout_manager_admin .widgets-sortables
+{
+	padding:15px;	
+}
+
+#wp_layout_manager_admin .widgets-sortables:after { clear:both; content:'.'; display:block; height:0; line-height:0; font-size:0; visibility:hidden; padding:0; margin:0; }
+
+#wp_layout_manager_admin .widgets-sortables .widget,
+#wp_layout_manager_admin .widgets-sortables .widget-placeholder
+{
+	width:31%;
+	margin-right:1%;
+	margin-bottom:1%;
+	float:left;
+	min-height:28px;
+}
+
+#wp_layout_manager_admin .widgets-sortables .widget-placeholder
+{
+	border:1px dotted #000;	
+}
+
+
+#wp_layout_manager_admin .widgets-sortables .column-1
+{
+	width:31%;
+}
+
+#wp_layout_manager_admin .widgets-sortables .column-2
+{
+	width:63%;
+}
+
+#wp_layout_manager_admin .widgets-sortables .column-3
+{
+	width:95%;
+}
+
+/***
+#wp_layout_manager_admin .ui-sortable-helper .widget-title-action
+{
+	display:none !important;
+}
+
+#wp_layout_manager_admin .widget-title-action
+{
+	display:none;
+}
+***/ 
+#wp_layout_manager_admin #widgets-right .widget-top .widget-title-action
+{
+	display:none;
+}
+
+#wp_layout_manager_admin .widget-title-action a
+{
+	float:left;	
+	display: block;
+    height: 26px;
+    min-width: 24px;	
+    
+    color:#b7b7b7;
+    text-decoration:none;
+    line-height:26px;
+}
+
+
+#wp_layout_manager_admin .widget-top a.widget-action-resize 
+{
+	background: transparent url(../../../../../wp-admin/images/arrows.png) no-repeat 4px -66px;
+}
+
+#wp_layout_manager_admin .widget-top a.widget-action-resize:hover {
+	background: transparent url(../../../../../wp-admin/images/arrows-dark.png) no-repeat 4px -66px;
+}
+
+#wp_layout_manager_admin .widget-top a.widget-action-resize-right
+{
+	background: transparent url(../../../../../wp-admin/images/arrows.png) no-repeat 4px -102px;
+}
+
+#wp_layout_manager_admin .widget-top a.widget-action-resize-right:hover {
+	background: transparent url(../../../../../wp-admin/images/arrows-dark.png) no-repeat 4px -102px;
+}
+
+#wp_layout_manager_admin .sidebar-feedback
+{
+	float:right;
+	margin-top:8px;
+}
+
+#wp_layout_manager_admin #footer
+{
+	margin:0;
+	position:static;
+}
+
+.layout_engine_form_widget
+{
+	max-width:620px;
+	margin:20px auto;
+}
+
+.layout_engine_form_widget .ajax-feedback
+{
+	position:absolute;
+	z-index:999;
+}
+
+
+#widget_list li
+{
+	background-color: #f1f1f1; /* Fallback */
+	background-image: -ms-linear-gradient(top, #f9f9f9, #ececec); /* IE10 */
+	background-image: -moz-linear-gradient(top, #f9f9f9, #ececec); /* Firefox */
+	background-image: -o-linear-gradient(top, #f9f9f9, #ececec); /* Opera */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ececec)); /* old Webkit */
+	background-image: -webkit-linear-gradient(top, #f9f9f9, #ececec); /* new Webkit */
+	background-image: linear-gradient(top, #f9f9f9, #ececec); /* proposed W3C Markup */
+	
+	border-bottom: 1px solid  #dfdfdf;
+	text-shadow: #fff 0 1px 0;
+	-moz-box-shadow: 0 1px 0 #fff;
+	-webkit-box-shadow: 0 1px 0 #fff;
+	box-shadow: 0 1px 0 #fff;	
+	
+    margin: 10px 0 20px;
+    
+ 	border-radius: 3px;
+ 	position:relative;
+ 	color:#464646;
+ 	
+ 	padding: 8px 10px;
+ 	height:17px;
+ 	
+ 	overflow:hidden;
+}
+
+#sidebar_form #widget_list li h3 a
+{
+	margin-left:20px;
+}
+
+#widget_list li.active
+{
+	background-image:none;
+	background-color:#DFDFDF;
+	font-weight:bold;
+}
+
+
+#widget_list li .drag-widget
+{
+	position:absolute;
+	width:16px;
+	height:16px;
+	background:url(../icons/drag.png) no-repeat;	
+	cursor:move;
+}
+
+#widget_list li.widget-theme-placeholder
+{
+	background-image:none;
+	background-color: #f1f1f1;
+	border: 2px dashed #dfdfdf;
+}
+
+#widget_list li h3
+{
+	margin:0;
+}
+
+#widget_list li.sortable h3
+{
+	margin:0 0 0 24px;
+}
+
+#widget_list li h3,
+#widget_list li h3 a
+{
+	color:#464646;
+	font-size:13px;
+	padding:0;
+	
+	text-decoration:none;
+}
+
+#widget_list li .options
+{
+	position:absolute; 
+	right:10px; 
+	top:13px;
+}
+
+#widget_list li .options a
+{
+	display:none;
+	float:left;
+	text-decoration:none;
+	margin-right:5px;
+	font-size:0.8em;	
+}
+
+#widget_list li:hover .options a
+{
+	display:block;
+}
+
+#widget_list li .options a.delete
+{
+	display:block;
+	width:10px;
+	height:10px;
+	text-indent:-2500px;
+	overflow:hidden;
+	outline:none;
+	
+	background: transparent url(../../../../../wp-admin/images/xit.gif) no-repeat;
+}
+
+#widget_list li a.delete:hover
+{
+	background-position:-10px top;	
+}
+
+#widget_list li #delete_confirm
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:999;
+	top:0;
+	left:-700px;
+
+	background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+}
+
+#widget_list li #delete_confirm a
+{
+	color: #B94A48;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+#widget_list li #delete_confirm p
+{
+	margin:0.8em;
+}
+
+.layout_engine_form_widget .row
+{
+	width:100%;
+	overflow:auto;
+	clear:both;
+	
+	margin-bottom:10px;
+}
+
+.layout_engine_form_widget .row .row-50
+{
+	float:left;
+	width:50%;
+}
+
+.layout_engine_form_widget .row .row-70
+{
+	float:left;
+	width:70%;
+}
+
+.layout_engine_form_widget .row .row-30
+{
+	float:left;
+	width:30%;
+}
+
+#add_new_advance
+{
+	display:none;
+}
+
+#dyanmic_form_area
+{
+	margin:10px;
+}
+
+#dyanmic_form_area select
+{
+	width:100%;
+}
+
+#dyanmic_form_area .button-primary
+{
+	margin-left:10px;
+}
+
+#dyanmic_form_area .widget-top
+{
+	display:none;
+}
+
+#dyanmic_form_area .widget-inside
+{
+	display:block;
+}
+
+#redirect_wordpress_widget_form
+{
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #DFDFDF
+}
+
+#redirect_wordpress_widget_form a
+{
+	text-decoration:none;
+}
+
+#preview_button a
+{
+	display:block;
+	width:90%;
+	height:25px;
+	clear:both;
+	margin-bottom:20px;
+	float:none;
+	text-align:center;
+	line-height:25px;
+}
+
+.input_item .selectit
+{
+	margin-left:5px;
+}
+
+.link-color-example
+{
+    border: 1px solid #DFDFDF;
+    border-radius: 4px 4px 4px 4px;
+    margin: 0 7px 0 3px;
+    padding: 4px 14px;
+    background:#fff;
+}
+
+
+#layout_engine_settings #post-body-content h3
+{
+	border-bottom:1px solid #CCCCCC;
+	font-weight:bold;
+}
+
+.list_metabox li
+{
+	padding: 6px 0 8px;
+	border-bottom:1px solid #DFDFDF;
+}
+
+.list_metabox li,
+.list_metabox li a
+{
+	color:#464646;
+}
+
+#le_utilities li
+{
+	border-bottom:1px solid #CCCCCC;
+	padding:4px 0;
+}
+
+#le_utilities li .task_link a
+{
+	font-weight:bold;
+}
+
+#le_utilities li .task_instruction
+{
+	font-size:11px;
+}
+
