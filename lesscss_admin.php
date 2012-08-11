@@ -736,7 +736,7 @@ class LE_LESSCSS_Admin
  */
 class lessc_le_compiler extends lessc
 {
-	function compileProp($prop, $block, $tags, &$_lines, &$_blocks) 
+	protected function compileProp($prop, $block, $tags) 
 	{
 		if($prop[0] == "assign") 
 		{
