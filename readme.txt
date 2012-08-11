@@ -18,7 +18,7 @@ Layout Engine simplifies the process of features rich theme building using LessC
 
 If you're interested in seeing what Layout Engine has to offer, try out the Test Drive!.
 
-<a href="http://simpleux.co.uk/plugins/wordpress/layout-engine/test-drive/wp-admin/index.php?test_drive=1">Layout Engine Test Drive</a>
+<a href="http://simpleux.co.uk/plugins/wordpress/layout-engine/test-drive/wp-admin/index.php?test_drive=1">Layout Engine Test Drive</a> | <a href="https://www.youtube.com/watch?v=9L_C5lRCOl0">Watch in action</a>
 
 <h4>More Information</h4>
 
