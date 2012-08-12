@@ -140,7 +140,7 @@ class LE_Sidebar
 													</div>
 											</li>
 											<?php else: ?>
-											<li class="uneditable"><h3><a href="#" rel="<?php echo $registered_sidebar['id']; ?>"><span><?php echo $registered_sidebar['name']; ?></span></a></h3></li>
+											<li class="uneditable"><h3><a href="#" rel="<?php echo $registered_sidebar['id']; ?>" class="selectable"><span><?php echo $registered_sidebar['name']; ?></span></a></h3></li>
 											<?php endif; ?>
 											
 											<?php endforeach; ?>
