@@ -7,7 +7,7 @@ Stable tag: 1.0.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Drag and drop wordpress visual theme designer framework, featuring integrated LessCSS support, literally allows you to customize any layout in wordpress template hierarchy, simplified widget and dynamic sidebar administration and ability to extend through wp plugin api .
+Drag and drop wordpress visual theme designer framework, featuring integrated LessCSS support.simplified widget and dynamic sidebar administration.
 
 == Description ==
 
