@@ -282,8 +282,14 @@ class LE_LESSCSS_Admin
 		
 		$options_saved = get_option('layout_manager_theme_options', array());
 		
-		$stylesheet_path = get_template_directory().DS.'style.less';
-		if(file_exists($stylesheet_path))
+		//Child theme support
+		$stylesheet_path = get_stylesheet_directory().DS.'style.less';
+		if(!$wp_filesystem->exists($stylesheet_path ))
+		{
+			$stylesheet_path = get_template_directory().DS.'style.less';
+		}
+		
+		if($wp_filesystem->exists($stylesheet_path ))
 		{
 						
 			$less_css_data = $wp_filesystem->get_contents($stylesheet_path);
@@ -594,8 +600,14 @@ class LE_LESSCSS_Admin
 		}
 		
 		
-		$stylesheet_path = get_template_directory().DS.'style.less';
-		if(file_exists($stylesheet_path))
+		//Child theme support
+		$stylesheet_path = get_stylesheet_directory().DS.'style.less';
+		if(!$wp_filesystem->exists($stylesheet_path ))
+		{
+			$stylesheet_path = get_template_directory().DS.'style.less';
+		}
+		
+		if($wp_filesystem->exists($stylesheet_path ))
 		{
 			$settings = (array) LE_LESSCSS_Admin::getSettings();
 			
@@ -638,7 +650,7 @@ class LE_LESSCSS_Admin
 			}
 			
 			//Compiling stylesheet
-			$stylesheet_path = get_template_directory().DS.'style.css';
+			$stylesheet_path = str_replace(".less",".css",$stylesheet_path);
 			return $wp_filesystem->put_contents($stylesheet_path, $less_css_compiled);
 		}
 	}
